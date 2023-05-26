@@ -5,6 +5,7 @@
 //    => "npm i typescript -g" 설치를 해주기
 //        => npm은 node기반으로 우리가 사용하는 js라이브러리들을 설치해주는거다
 //        => tsc(타입스크립트 컴파일러)를 사용하기 위해서, ts라이브러리를 이 로컬 시스템에 설치하는거다
+//        => 웹팩을 사용하면 "tsc index.ts"명령어를 일일히 쳐서 변환하지 않아도 됨
 
 function sum(a: number,b: number): number {
   return a+b;
