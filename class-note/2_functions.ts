@@ -13,3 +13,10 @@ function sum(a: number,b: number): number {
   return a+b;
 }
 sum(10,20,30,40); // 2개의 인수(arguments)가 필요한데 4개를 넣었다고 경고 알람이 뜸 => ts
+
+function log(a: string, b?: string) {
+
+}
+
+log('a', 'b');
+log('a');
