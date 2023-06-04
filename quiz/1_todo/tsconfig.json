@@ -1,8 +1,9 @@
+// 이 1_todo 프로젝트를 ts에서 js로 변환할 때, 어떤식의 세부 설정들을 주느냐
 {
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "noImplicitAny": false
+    "noImplicitAny": true
   },
   "include": ["./src/**/*"]
 }
