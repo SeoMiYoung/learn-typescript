@@ -51,6 +51,10 @@ function askSomeone(someone: Developer | Person) {
   */
 }
 
+// 유니온의 경우, Developer 또는 Person타입의 데이터를 제공해주면 됨
+askSomeone({ name: '디벨롭퍼', skill: '웹 개발' });
+askSomeone({ name: '캡틴', age: 100 });
+
 function askSomeone2(someone: Developer & Person) {
   /*
     [섹션7-4]
