@@ -65,3 +65,22 @@ var obj: StringRegexDictionary = {
   cssFile: /\.css$/,
   jsFile: /\.js$/,
 }
+
+// 이럴 때 쓰면 유용함
+Object.keys(obj).forEach(function(value) {});
+
+// 인터페이스 확장
+interface Person {
+  name: string;
+  age: number;
+}
+
+interface Developer extends Person{
+  language: string;
+}
+
+var student: Developer = {
+  language: 'Korean',
+  name: 'SeoMiYoung',
+  age: 24,
+}
