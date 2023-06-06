@@ -51,5 +51,17 @@ interface StringArray {
 }
 
 var arr: StringArray = ['a', 'b', 'c'];
-arr[0] = 10;  // 숫자값을 넣을 수 없음
-arr[1] = 'ming';  // string을 넣을 수 있음
+// arr[0] = 10;  // 숫자값을 넣을 수 없음
+// arr[1] = 'ming';  // string을 넣을 수 있음
+
+// 딕셔너리 패턴
+interface StringRegexDictionary {
+  // 규칙
+  // 왼쪽에 오는 것은 문자열 속성 + 값은 정규표현식이 와야 함
+  [key: string]: RegExp;
+}
+
+var obj: StringRegexDictionary = {
+  cssFile: /\.css$/,
+  jsFile: /\.js$/,
+}
