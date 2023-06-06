@@ -26,3 +26,30 @@ const capt = {
 }
 
 getUser(capt);
+
+// -------------------------------------------------------------------------------
+// 함수의 스펙(구조)에 인터페이스를 활용 (함수의 전체적인 모습을 interface로 정의)
+// 여러명이서 동시에 협업할 때, 라이브러리 만들 때
+
+interface SumFunction {
+  // 인자를 괄호를 쳐서 정의 가능
+  (a: number, b: number): number;
+}
+
+// var sum = function(a,b) {
+//   return a+b;
+// }
+
+var sum: SumFunction;
+sum = function(a: number, b: number): number {
+  return a+b;
+};
+
+// 배열에 접근하는 방식 정하기
+interface StringArray {
+  [index: number]: string;
+}
+
+var arr: StringArray = ['a', 'b', 'c'];
+arr[0] = 10;  // 숫자값을 넣을 수 없음
+arr[1] = 'ming';  // string을 넣을 수 있음
