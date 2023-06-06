@@ -9,7 +9,20 @@ interface User {
   name: string;
 }
 
+// 변수에 활용한 interface
 var seho: User = {
   age: 33,
   name: '세호',
 }
+
+// 함수에 interface 활용
+function getUser(user: User) {
+  console.log(user); 
+}
+
+const capt = {
+  name: '캡틴',
+  age: 18,
+}
+
+getUser(capt);
