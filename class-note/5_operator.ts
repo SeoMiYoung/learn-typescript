@@ -50,3 +50,18 @@ function askSomeone(someone: Developer | Person) {
     type가드로, 특정 타입을 제한해서 ㄱㄱ => 타입가드는 강의 후반부에 다룰 예정이므로 생략
   */
 }
+
+function askSomeone2(someone: Developer & Person) {
+  /*
+    [섹션7-4]
+    인터섹션(&)은 유니온(|)과 다르다.
+    이 경우, someone은 name/age/skill에 모두 접근 가능하다.
+
+    [유니온 타입 VS 인터섹션 타입]
+    유니온 타입: skill과 age를 보장할 수 없기 때문에 추가로 type guard에 대한 처리가 필요했음.
+    인터섹션 타입: type guard가 별도로 필요없고, Developer와 Person이 가지고 있는 모든 속성을 사용 가능.
+
+    [실무에서 더 많이 쓰이는 타입?]
+    유니온 타입이 더 많이 쓰인다...!
+  */
+}
