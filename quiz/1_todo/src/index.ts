@@ -1,9 +1,29 @@
 // 이제 타입 정의해야 됨(타이핑)
 
-let todoItems: object[]; // 배열인데, object로 구성
+// 중복된 코드 생략하기 위해
+/*
+type Todo = {
+  // 아~ 타입정의할때는 ;로 이어주구나..
+  id: number;
+  title: string;
+  done: boolean;
+};
+*/
+
+// 인터페이스 방식 사용
+// =안붙히는거 주의
+interface Todo {
+  id: number;
+  title: string;
+  done: boolean;
+}
+
+let todoItems: Todo[];
+
+// let todoItems: { id: number; title: string; done: boolean }[]; // 배열인데, object로 구성
 
 // api
-function fetchTodoItems(): object[] {
+function fetchTodoItems(): Todo[] {
   const todos = [
     { id: 1, title: '안녕', done: false },
     { id: 2, title: '타입', done: false },
@@ -18,7 +38,7 @@ function fetchTodos(): object[] {
   return todos;
 }
 
-function addTodo(todo: object): void {
+function addTodo(todo: Todo): void {
   todoItems.push(todo);
 }
 
@@ -27,8 +47,11 @@ function deleteTodo(index: number): void {
   todoItems.splice(index, 1);
 }
 
-function completeTodo(index: number, todo: object): void {
-  // todo라는 object안에 done이라는 속성이 있는지, ts가 인식을 못하고 있음
+// 도대체 왜 줄바꿈을 하라고 저 난리인건지 모르겠음
+function completeTodo(
+  index: number,
+  todo: { id: number; title: string; done: boolean }
+): void {
   todo.done = true;
   todoItems.splice(index, 1, todo);
 }
