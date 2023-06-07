@@ -14,4 +14,10 @@ console.log(myShoes); // 0이 출력됨 + 별도의 값을 넣지 않는다면, 
 
 
 // 문자형 enum
+enum Shoes2 {
+  Nike = '나이키', 
+  Adidas = '아디다스', 
+}
 
+var myShoes2 = Shoes2.Nike;
+console.log(myShoes2); // '나이키'가 출력됨
