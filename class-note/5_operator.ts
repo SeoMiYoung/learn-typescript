@@ -24,7 +24,7 @@ function logMessage(value: string | number ) {
 
 logMessage('hello');
 logMessage(3);
-logMessage(true); // boolean type은 선택지에 없음 -> 에러 발생
+// logMessage(true); // boolean type은 선택지에 없음 -> 에러 발생
 
 /* --------------------------------- [섹션7-3] -------------------------------- */
 interface Developer {
