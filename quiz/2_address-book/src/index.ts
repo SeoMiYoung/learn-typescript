@@ -15,12 +15,14 @@ interface Contact {
 
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
+// 전화번호부를 불러오는 함수
 function fetchContacts(): Promise<Contact[]> {
   // TODO: 아래 변수의 타입을 지정해보세요.
   const contacts: Contact[] = [
     {
       name: 'Tony',
       address: 'Malibu',
+      // phones에는 home, office, studio 3개정도가 들어갈 수 있음 => enum으로 ㄱㄱ
       phones: {
         home: {
           num: 11122223333,
@@ -62,6 +64,7 @@ class AddressBook {
   // TODO: 아래 변수의 타입을 지정해보세요.
   contacts: Contact[] = [];
 
+  // class가 보통 생성이 될 때, 기본적으로 실행되는 초기화 코드들을 constructor()안에 넣습니다!
   constructor() {
     this.fetchData();
   }
@@ -73,6 +76,7 @@ class AddressBook {
   }
 
   /* TODO: 아래 함수들의 파라미터 타입과 반환 타입을 지정해보세요 */
+  // 이름을 가지고 전화번호를 찾는다
   findContactByName(name: string): Contact[] {
     return this.contacts.filter(contact => contact.name === name);
   }
