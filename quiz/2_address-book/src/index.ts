@@ -13,6 +13,13 @@ interface Contact {
   phones: PhoneNumberDictionary;
 }
 
+// enum
+enum PhoneType {
+  Home = 'home',
+  Office = 'office',
+  Studio = 'studio',
+}
+
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
 // 전화번호부를 불러오는 함수
@@ -85,21 +92,26 @@ class AddressBook {
     return this.contacts.filter(contact => contact.address === address);
   }
 
-  findContactByPhone(phoneNumber: number, phoneType: string): Contact[] {
+  // phoneType에는 phone, office, studio => 3가지 타입정도가 존재함
+
+  findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
     return this.contacts.filter(
       contact => contact.phones[phoneType].num === phoneNumber
     );
   }
+  // findContactByPhone(PhoneType.phone);
 
-  addContact(contact: Contact[]): void {
+  // 전화번호부를 하나 추가하는 거임
+  addContact(contact: Contact): void {
     this.contacts.push(contact);
   }
 
-  displayListByName() {
+  displayListByName(): string[] {
+    // name을 가지고 map을 돌림
     return this.contacts.map(contact => contact.name);
   }
 
-  displayListByAddress() {
+  displayListByAddress(): string[] {
     return this.contacts.map(contact => contact.address);
   }
   /* ------------------------------------------------ */
