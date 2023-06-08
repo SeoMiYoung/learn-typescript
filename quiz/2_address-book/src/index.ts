@@ -1,9 +1,12 @@
 interface PhoneNumberDictionary {
+  // phone"이라는 문자열 키에 대응하는 값의 타입을 정의한다는 의미
   [phone: string]: {
     num: number;
   };
+  // { "01012345678": { num: 12345678 } }
 }
 
+// 전화번호의 규격을 정해놓음
 interface Contact {
   name: string;
   address: string;
@@ -12,9 +15,9 @@ interface Contact {
 
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
-function fetchContacts() {
+function fetchContacts(): Promise<Contact[]> {
   // TODO: 아래 변수의 타입을 지정해보세요.
-  const contacts = [
+  const contacts: Contact[] = [
     {
       name: 'Tony',
       address: 'Malibu',
@@ -57,7 +60,7 @@ function fetchContacts() {
 // main
 class AddressBook {
   // TODO: 아래 변수의 타입을 지정해보세요.
-  contacts = [];
+  contacts: Contact[] = [];
 
   constructor() {
     this.fetchData();
@@ -70,21 +73,21 @@ class AddressBook {
   }
 
   /* TODO: 아래 함수들의 파라미터 타입과 반환 타입을 지정해보세요 */
-  findContactByName(name) {
+  findContactByName(name: string): Contact[] {
     return this.contacts.filter(contact => contact.name === name);
   }
 
-  findContactByAddress(address) {
+  findContactByAddress(address: string): Contact[] {
     return this.contacts.filter(contact => contact.address === address);
   }
 
-  findContactByPhone(phoneNumber, phoneType: string) {
+  findContactByPhone(phoneNumber: number, phoneType: string): Contact[] {
     return this.contacts.filter(
       contact => contact.phones[phoneType].num === phoneNumber
     );
   }
 
-  addContact(contact) {
+  addContact(contact: Contact[]): void {
     this.contacts.push(contact);
   }
 
